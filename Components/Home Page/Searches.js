@@ -25,26 +25,26 @@ function Searches(props) {
   ]);
   return (
     <>
-      <section class="popular-search">
+      <section className="popular-search">
         <Container>
-          <Row class="row">
+          <Row className="row">
             <Col>
-              <h2 class="cheading">Popular Searches</h2>
+              <h2 className="cheading">Popular Searches</h2>
             </Col>
           </Row>
 
-          <Row class="row mt-5">
+          <Row className="row mt-5">
             {Searches.map((e, index) => (
               <Col lg={3} key={`id_${e._id}-${index}`}>
-                <div class="popularsearch">
+                <div className="popularsearch">
                   <a href={e.link}>{e.name}</a>
                 </div>
               </Col>
             ))}
           </Row>
           <Row>
-            <div class="search_more  d-block mx-auto mt-5 mb-5">
-              <button type="button" class="btn btn">
+            <div className="search_more  d-block mx-auto mt-5 mb-5">
+              <button type="button" className="btn btn">
                 View More
               </button>
             </div>

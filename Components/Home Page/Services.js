@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Container, Row, Col, Tab, Nav, Tabs, Image } from "react-bootstrap";
+// import jQuery from "jquery";
+// const $ = window.jQuery;
+// import OwlCarousel from "react-owl-carousel";
+import dynamic from "next/dynamic";
 
+const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  ssr: false,
+});
 function Services(props) {
   const [Service, setService] = useState([
     {
@@ -47,10 +54,10 @@ function Services(props) {
             <div
               className="services shadow"
               style={{
-                marginTop: "-70",
+                marginTop: "-70px",
               }}
             >
-              <div className="owl-carousel">
+              {/* <div className="owl-carousel">
                 {Service.map((e, index) => (
                   <div key={`id_${index}-${e.image}`}>
                     <Image
@@ -61,7 +68,25 @@ function Services(props) {
                     <p className="text-center">{e.name}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
+              <OwlCarousel
+                items={6}
+                className="owl-theme"
+                loop={false}
+                margin={10}
+                nav
+              >
+                {Service.map((e, index) => (
+                  <div key={`id_${index}-${e.image}`}>
+                    <Image
+                      src={e.image}
+                      className="d-block mx-auto"
+                      alt="reales"
+                    />
+                    <p className="text-center">{e.name}</p>
+                  </div>
+                ))}
+              </OwlCarousel>
             </div>
           </Col>
         </Row>

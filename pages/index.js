@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
       <Header />
       <Banner />
-      {/* <Services/> */}
+      <Services/>
       <BuyHome />
       <RecentlyViewed />
       <Popular />
